@@ -4,7 +4,7 @@ import FeaturedCase from '../Cases/FeaturedCase';
 import Loading from '../Loading';
 import Toolbar from '../Toolbar';
 import ClientsList from '../Clients/ClientsList';
-import ContactForm from '../ContactForm';
+import ContactForm from '../Forms/ContactForm';
 
 export default function Home() {
 

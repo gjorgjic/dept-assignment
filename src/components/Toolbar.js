@@ -3,6 +3,9 @@ import React from 'react'
 export default function Toolbar() {
     return (
         <div className="toolbar">
+            <div className="layout-switch">
+                <span className="toggle"></span>
+            </div>
             <div className="work">
                 <label>Show me:</label>
                 <select>

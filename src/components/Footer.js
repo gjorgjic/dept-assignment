@@ -1,5 +1,6 @@
 import React from 'react';
-import { LogoLink, HomeLink, WerkLink, OverLink, DientsenLink, PartnersLink, VacaturesLink } from './Links';
+import { LogoLink, HomeLink, WerkLink, OverLink, DientsenLink, PartnersLink, VacaturesLink } from './Links/PageLinks';
+import { FacebookLink, TwitterLink, InstagramLink} from './Links/SocialLinks';
 
 export default function Footer() {
     return (
@@ -15,6 +16,12 @@ export default function Footer() {
                     <li>{PartnersLink}</li>
                     <li>{VacaturesLink}</li>
                 </ul>
+
+                <div className="socials">
+                    <FacebookLink />
+                    <TwitterLink />
+                    <InstagramLink />
+                </div>
             </div>
             
             <div className="footer-bottom">
