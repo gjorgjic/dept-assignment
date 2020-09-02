@@ -15,25 +15,25 @@ function Header() {
                         <span className="title">Landen</span>
                         <ul>
                             <li>
-                                <a href="#">Global</a>
+                                <a href="/#">Global</a>
                             </li>
                             <li>
-                                <a href="#">Nederland</a>
+                                <a href="/#">Nederland</a>
                             </li>
                             <li>
-                                <a href="#">United States</a>
+                                <a href="/#">United States</a>
                             </li>
                             <li>
-                                <a href="#">Ireland</a>
+                                <a href="/#">Ireland</a>
                             </li>
                             <li>
-                                <a href="#">United Kingdom</a>
+                                <a href="/#">United Kingdom</a>
                             </li>
                             <li>
-                                <a href="#">Deutschland</a>
+                                <a href="/#">Deutschland</a>
                             </li>
                             <li>
-                                <a href="#">Schweiz</a>
+                                <a href="/#">Schweiz</a>
                             </li>
                         </ul>
                     </div>
@@ -60,16 +60,16 @@ function Header() {
 
                     <ul className="social-links">
                        <li>
-                           <a href="#">Facebook</a>
+                           <a href="/#">Facebook</a>
                         </li>
                        <li>
-                           <a href="#">Twitter</a>
+                           <a href="/#">Twitter</a>
                         </li>
                        <li>
-                           <a href="#">Instagram</a>
+                           <a href="/#">Instagram</a>
                         </li>
                        <li>
-                           <a href="#">LinkedIn</a>
+                           <a href="/#">LinkedIn</a>
                         </li>
                     </ul>
                 </div>
