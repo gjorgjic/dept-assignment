@@ -1,0 +1,70 @@
+{
+    "title": "Clients",
+    "description": "We value a great working relationship with our clients above all else. It’s why they often come to our parties. It’s also why we’re able to challenge and inspire them to reach for the stars.",
+    "clients": [
+        {
+            "client": "Nivea",
+            "img_src": "/images/clients/Nivea_logo_zwart.png"
+        },
+        {
+            "client": "Mona",
+            "img_src": "/images/clients/Mona_logo_zwart.png"
+        },
+        {
+            "client": "Transavia",
+            "img_src": "/images/clients/Transavia_logo_zwart.png"
+        },
+        {
+            "client": "Zalando",
+            "img_src": "/images/clients/Zalando_logo_zwart.png"
+        },
+        {
+            "client": "Tomtom",
+            "img_src": "/images/clients/Tomtom_logo_zwart.png"
+        },
+        {
+            "client": "Unilever",
+            "img_src": "/images/clients/Unilever_logo_zwart.png"
+        },
+        {
+            "client": "Adidas",
+            "img_src": "/images/clients/Adidas_logo_zwart.png"
+        },
+        {
+            "client": "Pathe",
+            "img_src": "/images/clients/Pathe_logo_zwart.png"
+        },
+        {
+            "client": "ABN",
+            "img_src": "/images/clients/ABN_logo_zwart.png"
+        },
+        {
+            "client": "Triumph",
+            "img_src": "/images/clients/Triumph_logo_zwart.png"
+        },
+        {
+            "client": "Microsoft",
+            "img_src": "/images/clients/Microsoft_logo_zwart-320x161.png"
+        },
+        {
+            "client": "Oxxio",
+            "img_src": "/images/clients/Oxxio_logo_zwart.png"
+        },
+        {
+            "client": "Nationale Nederlanden",
+            "img_src": "/images/clients/NN_logo_zwart.png"
+        },
+        {
+            "client": "Ziggo",
+            "img_src": "/images/clients/Ziggo_logo_zwart.png"
+        },
+        {
+            "client": "Walibi",
+            "img_src": "/images/clients/Walibi_logo_zwart.png"
+        },
+        {
+            "client": "KLM",
+            "img_src": "/images/clients/KLM_logo_zwart.png"
+        }
+    ]
+}

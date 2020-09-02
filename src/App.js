@@ -1,12 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import GlobalFonts from './assets/fonts/';
+import Header from './components/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
-}
+ function App() {
+   return (
+    <Router>
+      <GlobalFonts />
+      <div className="page">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </Router>
+   );
+ }
 
-export default App;
+ export default App;

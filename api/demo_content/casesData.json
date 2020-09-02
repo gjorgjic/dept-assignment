@@ -1,0 +1,119 @@
+{
+    "cases": [
+        {
+            "name": "Bol.com",
+            "title": "A summer island in the Netherlands",
+            "img": "images/bolcom.png",
+            "href": "#"
+        },
+        {
+            "name": "Kempen",
+            "title": "Not some average banking website",
+            "img": "images/kempen.png",
+            "href": "#"
+        },
+        {
+            "name": "Philips",
+            "title": "Beautiful design meets innovative technology",
+            "img": "images/philips.png",
+            "href": "#"
+        },
+        {
+            "name": "Gemeentemuseum",
+            "title": "A 100 years of Mondriaan & De Stijl",
+            "img": "images/gemeentemuseum.png",
+            "href": "#"
+        },
+        {
+            "name": "Florensis",
+            "title": "Beautiful design meets innovative technology",
+            "img": "images/florensis.png",
+            "href": "#",
+            "featured": true,
+            "featuredTitle": "Work"
+        },
+        {
+            "name": "Microsoft",
+            "title": "Tapping into Ireland’s unique gaming culture and bringing a fresh flavour to their Xbox social media channels",
+            "img": "",
+            "href": "#"
+        },
+        {
+            "name": "O’NEILL",
+            "title": "Integrating existing content into O’Neill’s new e-commerce platform",
+            "img": "",
+            "href": "#"
+        },
+        {
+            "name": "Be Lighting",
+            "title": "Delivering clarity on a global scale",
+            "img": "images/lightning.png",
+            "href": "#"
+        },
+        {
+            "name": "TUI",
+            "title": "Swipe to find your next holiday destination",
+            "img": "images/tui.png",
+            "href": "#"
+        },
+        {
+            "name": "BUTLINS",
+            "title": "Enhancing customer experience for personalised holiday planning using real time data",
+            "img": "",
+            "href": "#"
+        },
+        {
+            "name": "VACANSESELECT",
+            "title": "Predicting booking behavior for holidays with smart data, voice search and machine learning",
+            "img": "",
+            "href": "#"
+        },
+        {
+            "name": "Florensis",
+            "title": "Beautiful design meets innovative technology",
+            "img": "images/florensis.png",
+            "href": "#"
+        },
+        {
+            "name": "Chocomel",
+            "title": "A campaign for the limited edition letter packs",
+            "img": "images/chocomel.png",
+            "href": "#"
+        },
+        {
+            "name": "JBL",
+            "title": "Live like a champion with Jerome Booteng",
+            "img": "images/jbl.png",
+            "href": "#"
+        },
+        {
+            "name": "zalando",
+            "title": "Innovative SEO and content strategy for Zalando",
+            "img": "images/zalando.png",
+            "href": "#"
+        },
+        {
+            "name": "Koninklijke Bibliotheek",
+            "title": "The search for the most influential book ever",
+            "img": "images/koninklijke-bibliotheek.png",
+            "href": "#"
+        },
+        {
+            "isQuote": true,
+            "quote": "Dept helped us tell our story through a bold new identity and a robust online experience. To the tune of 60% growth in online bookings in just one month.",
+            "name": "MATTIJS TEN BRINK – CEO, TRANSAVIA"
+        },
+        {
+            "name": "Liberty Global",
+            "title": "Delivering complex commerce solutions",
+            "img": "images/liberty-global.png",
+            "href": "#"
+        },
+        {
+            "name": "Arla",
+            "title": "Swipe to find your next holiday destination",
+            "img": "images/arla.png",
+            "href": "#"
+        }
+    ]
+}
