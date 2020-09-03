@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import CaseList from '../Cases/CaseList'
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import CaseList from '../Cases/CaseList';
 import FeaturedCase from '../Cases/FeaturedCase';
 import Loading from '../Loading';
-import Toolbar from '../Toolbar';
+import Toolbar from '../Toolbar/Toolbar';
 import ClientsList from '../Clients/ClientsList';
 import ContactForm from '../Forms/ContactForm';
+import { CenteredContent } from '../../assets/globalStyles';
+
+const OHCenteredContent = styled(CenteredContent)`
+    overflow: hidden;
+`;
 
 export default function Home() {
 
@@ -49,10 +55,14 @@ export default function Home() {
     return (
         <div>
             <FeaturedCase featuredCase={featuredCase} />
-            <Toolbar />
-            <CaseList cases={cases} findWithAttr={findWithAttr} />
+            <OHCenteredContent>
+                <Toolbar />
+                <CaseList cases={cases} findWithAttr={findWithAttr} />
+            </OHCenteredContent>
             <ClientsList />
-            <ContactForm />
+            <CenteredContent>
+                <ContactForm />
+            </CenteredContent>
         </div>
     )
 }

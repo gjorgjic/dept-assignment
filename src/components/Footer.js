@@ -6,15 +6,15 @@ export default function Footer() {
     return (
         <footer>
             <div className="footer-top">
-                {LogoLink}
+                <LogoLink />
 
                 <ul>
-                    <li>{HomeLink}</li>
-                    <li>{WerkLink}</li>
-                    <li>{OverLink}</li>
-                    <li>{DientsenLink}</li>
-                    <li>{PartnersLink}</li>
-                    <li>{VacaturesLink}</li>
+                    <li><HomeLink /></li>
+                    <li><WerkLink /></li>
+                    <li><OverLink /></li>
+                    <li><DientsenLink /></li>
+                    <li><PartnersLink /></li>
+                    <li><VacaturesLink /></li>
                 </ul>
 
                 <div className="socials">

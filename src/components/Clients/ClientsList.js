@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import Loading from '../Loading';
 import ClientsItem from './ClientsItem';
+import { CenteredContent } from '../../assets/globalStyles';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function ClientsList() {
 
@@ -25,9 +27,14 @@ export default function ClientsList() {
         return <Loading />
     }
 
+
     return (
         <div className="clients">
-            <ClientsItem clients={clients.clients} />
+            <CenteredContent>
+                {clients.clients.length > 0 && clients.clients.map(({ img_src, client }) => (
+                    <ClientsItem key={uuidv4()} client={client} img_src={img_src} />
+                ))}
+            </CenteredContent>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { StyledButtonB } from '../../assets/globalStyles';
 
 export default function ContactForm() {
 
@@ -98,7 +99,7 @@ export default function ContactForm() {
                         {messageError && requiredField}
                     </div>
                 </div>
-                <button type="submit">Sen</button>
+                <StyledButtonB type="submit">Sen</StyledButtonB>
             </form>
         </div>
     )

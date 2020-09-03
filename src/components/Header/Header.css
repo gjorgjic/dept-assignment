@@ -1,0 +1,31 @@
+.hamburger:after,
+.hamburger:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    right: 0;
+    transform: translateY(-50%);
+    transform-origin: center;
+    background-color: #0E0E0E;
+    top: 47%;
+    transition: all 0.1s linear;
+}
+
+.hamburger:after {
+    margin-top: -4px;
+}
+.hamburger:before {
+    margin-top: 4px;
+}
+
+.hamburger.open:before {
+    transform: translateY(-50%) rotate(135deg);
+    margin: 0;
+}
+
+.hamburger.open:after {
+    transform: translateY(-50%) rotate(45deg);
+    margin: 0;
+}

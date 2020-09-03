@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalFonts from './assets/fonts/';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Main from './components/Main';
 import Footer from './components/Footer';

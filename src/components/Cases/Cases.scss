@@ -1,0 +1,31 @@
+.cases {
+    .case {
+        
+        width: 100%;
+        float: left;
+
+        @media (min-width: 768px) {
+            max-width: calc(50% - 10px);
+
+            &:nth-child(2n) {
+                margin-left: 10px;
+            }
+
+            &:nth-child(2n+1) {
+                margin-right: 10px;
+                clear: left;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    
+    .quote {
+        width: 100%;
+        clear: both;
+        float: left;
+    }
+}
