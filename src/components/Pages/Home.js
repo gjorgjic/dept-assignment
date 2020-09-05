@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CaseList from '../Cases/CaseList';
 import FeaturedCase from '../Cases/FeaturedCase';
-import Loading from '../Loading';
 import Toolbar from '../Toolbar/Toolbar';
 import ClientsList from '../Clients/ClientsList';
 import ContactForm from '../Forms/ContactForm';
@@ -27,7 +26,7 @@ export default function Home() {
                 headers: headers,
             })
             .then(response => {
-            //   console.log(response);
+                // console.log(response);
                 return response.json();
             })
             .then(data => {
@@ -48,10 +47,6 @@ export default function Home() {
         return -1;
     }
 
-    if(cases.length < 1) {
-        return <Loading />
-    }
-   
     return (
         <div>
             <FeaturedCase featuredCase={featuredCase} />
@@ -60,7 +55,7 @@ export default function Home() {
                 <CaseList cases={cases} findWithAttr={findWithAttr} />
             </OHCenteredContent>
             <ClientsList />
-            <CenteredContent>
+            <CenteredContent className="contact-form-container">
                 <ContactForm />
             </CenteredContent>
         </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import './FeaturedCase.scss';
 import { CenteredContent, StyledButtonA } from '../../assets/globalStyles';
+import Loading from '../Loading';
+import '../../assets/css/FeaturedCase.scss';
 
 const AbsoluteCenteredContent = styled(CenteredContent)`
     position: absolute;
@@ -18,13 +19,20 @@ const FeaturedCaseStyledButton = styled(StyledButtonA)`
 `;
 
 export default function FeaturedCase({ featuredCase }) {
+    if(Object.keys(featuredCase).length === 0) {
+        return (
+            <CenteredContent>
+                <Loading />
+            </CenteredContent>
+        )
+    }
     const { name, featuredTitle, img, href } = featuredCase;
     return (
         <div className="case featured-case">
             <img src={`http://localhost:4000/${img}`} alt={name}/>
             <AbsoluteCenteredContent>
                 <h3>{featuredTitle}</h3>
-                <FeaturedCaseStyledButton black={true} href={href}>View case</FeaturedCaseStyledButton>
+                <FeaturedCaseStyledButton className="btn featured-btn" black={true} href={href}>View case</FeaturedCaseStyledButton>
             </AbsoluteCenteredContent>
         </div>
     )

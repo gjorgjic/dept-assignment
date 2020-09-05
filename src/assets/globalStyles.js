@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 
 const CenteredContent = styled.div`
     width: 100%;
@@ -30,6 +31,11 @@ const StyledButtonA = styled.a`
     text-decoration: none !important;
     text-transform: uppercase;
     background-color: ${props => props.black ? '#0E0E0E' : '#1A18F7'};
+
+    &:hover,
+    &:focus {
+        background-color: ${props => props.black ? lighten(0.1, '#0E0E0E') : lighten(0.1, '#1A18F7')}
+    }
 `
 
 const StyledButtonB = styled.button`
@@ -44,6 +50,11 @@ const StyledButtonB = styled.button`
     text-decoration: none !important;
     text-transform: uppercase;
     background-color: ${props => props.black ? '#0E0E0E' : '#1A18F7'};
+
+    &:hover,
+    &:focus {
+        background-color: ${props => props.black ? lighten(0.1, '#0E0E0E') : lighten(0.1, '#1A18F7')}
+    }
 `
 
 export {

@@ -6,6 +6,7 @@ import Over from './Pages/Over';
 import Dientsen from './Pages/Dientsen';
 import Partners from './Pages/Partners';
 import Vacatures from './Pages/Vacatures';
+import Events from './Pages/Events';
 
 export default function Main() {
     return (
@@ -28,6 +29,9 @@ export default function Main() {
                 </Route>
                 <Route exact path="/vacatures">
                     <Vacatures />
+                </Route>
+                <Route exact path="/events">
+                    <Events />
                 </Route>
             </Switch>
         </main>

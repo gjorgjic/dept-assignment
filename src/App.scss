@@ -1,0 +1,53 @@
+$successColor: #54b922;
+$errorColor: #ff2929;
+
+* {
+  box-sizing: border-box;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #ddd;
+  border-left: none;
+  outline-color: transparent;
+  background-color: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+.error {
+  color: $errorColor;
+}
+
+.success {
+  color: $successColor;
+}
+
+.field {
+  &.success {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      border-color: $successColor;
+    }
+  }
+
+  &.error {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+      border-color: $errorColor;
+    }
+  }
+}

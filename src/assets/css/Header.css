@@ -1,4 +1,4 @@
-.hamburger:after,
+/* .hamburger:after,
 .hamburger:before {
     content: "";
     display: block;
@@ -28,4 +28,4 @@
 .hamburger.open:after {
     transform: translateY(-50%) rotate(45deg);
     margin: 0;
-}
+} */
