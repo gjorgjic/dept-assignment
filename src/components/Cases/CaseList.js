@@ -10,7 +10,7 @@ import { fetchCases } from '../../store/actions';
 
 function CaseList() {
 
-    const layout = useSelector(state => state.layoutReducer, shallowEqual)
+    // const layout = useSelector(state => state.layoutReducer, shallowEqual)
     const cases = useSelector(state => state.casesReducer, shallowEqual)
     const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ function CaseList() {
     let quoteId = findWithAttr(cases.cases, 'isQuote', true);
 
     return (
-        <div className={`cases ${layout}-layout`}>
+        <div className={`cases grid-layout`}>
             {/* {console.log(cases, 'cases')} */}
             {cases.cases.length > 0 && cases.cases.map((data, i) => i === quoteId ? <QuoteItem quoteData={data} key={uuidv4()}>QuoteItem</QuoteItem> : <CaseItem key={uuidv4()} caseData={data} />)}
         </div>

@@ -24,11 +24,17 @@ function Toolbar(props) {
     )
 
     const toggleGridList = () => {
+        let casesDiv = document.querySelector('.cases');
+        let casesDivClasses = casesDiv.classList;
         setIsGrid(!isGrid);
         if(isGrid) {
-            dispatch(setList())
+            // dispatch(setList())
+            casesDivClasses.remove('grid-layout');
+            casesDivClasses.add('list-layout');
         } else {
-            dispatch(setGrid())
+            // dispatch(setGrid())
+            casesDivClasses.add('grid-layout');
+            casesDivClasses.remove('list-layout');
         }
     }
     
@@ -43,11 +49,11 @@ function Toolbar(props) {
             if(siblings[sibling].getAttribute('data-category') !== catVal) {
                 siblings[sibling].style.display = 'none'
             } else {
-                siblings[sibling].style.display = 'block'
+                siblings[sibling].style.display = 'grid'
             }
 
             if(catVal === 'all') {
-                siblings[sibling].style.display = 'block'
+                siblings[sibling].style.display = 'grid'
             }
         }
         forceCheck();
@@ -65,11 +71,11 @@ function Toolbar(props) {
             if(siblings[sibling].getAttribute('data-industry') !== indVal) {
                 siblings[sibling].style.display = 'none'
             } else {
-                siblings[sibling].style.display = 'block'
+                siblings[sibling].style.display = 'grid'
             }
 
             if(indVal === 'all') {
-                siblings[sibling].style.display = 'block'
+                siblings[sibling].style.display = 'grid'
             }
         }
         forceCheck();
