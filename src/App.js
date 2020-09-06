@@ -3,7 +3,7 @@ import GlobalFonts from './assets/fonts/';
 import Header from './components/Header/Header';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Main from './components/Main';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import { Provider } from 'react-redux';
 import store from './store'
 import './App.scss';

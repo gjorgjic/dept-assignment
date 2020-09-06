@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { CenteredContent } from '../assets/globalStyles';
-import { LogoLink, HomeLink, WerkLink, OverLink, DientsenLink, PartnersLink, VacaturesLink, ArrowUp } from './Links/PageLinks';
-import { FacebookLink, TwitterLink, InstagramLink } from './Links/SocialLinks';
-import '../assets/css/Footer.scss';
+import { LogoLink, HomeLink, WerkLink, OverLink, DientsenLink, PartnersLink, VacaturesLink, ArrowUp } from '../Links/PageLinks';
+import { FacebookLink, TwitterLink, InstagramLink } from '../Links/SocialLinks';
+import { CenteredContent } from '../../assets/globalStyles';
+import '../../assets/css/Footer.scss';
 
 export default function Footer() {
 
