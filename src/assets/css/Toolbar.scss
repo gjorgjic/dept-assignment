@@ -4,6 +4,11 @@
     padding-top: 40px;
     padding-bottom: 40px;
     font-size: 30px;
+    align-items: center;
+
+    > div:not(:last-of-type) {
+        margin-right: 30px;
+    }
 
     label {
         color: #A3A3A3;
@@ -11,9 +16,16 @@
     }
 
     .layout-switch {
-        svg {
-            width: 30px;
-            height: 30px;;
+        .toggle {
+            display: block;
+            font-size: 0;
+            margin-top: -4px;
+            cursor: pointer;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 
@@ -43,9 +55,5 @@
         line-height: 20px;
         height: 30px;
         appearance: none;
-    }
-
-    .work {
-        margin-right: 30px;
     }
 }

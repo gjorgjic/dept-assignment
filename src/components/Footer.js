@@ -35,7 +35,6 @@ export default function Footer() {
         } else {
             setIsViewportMobile(true);
             // set `linktop` right offset when viewport is a mobile screen
-            // TODO: test 
         }
     }
 
@@ -83,7 +82,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <span id="linkTop" style={{"display": "none", "color": "#1A18F7"}} onClick={handleScrollTop}>
+                <span id="linkTop" onClick={handleScrollTop}>
                     <ArrowUp />
                     Top
                 </span>

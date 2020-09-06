@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { CenteredContent, StyledButtonA } from '../../assets/globalStyles';
 import Loading from '../Loading';
+import { useSelector, useDispatch, shallowEqual, connect } from 'react-redux';
+import { fetchCases } from '../../store/actions';
 import '../../assets/css/FeaturedCase.scss';
 
 const AbsoluteCenteredContent = styled(CenteredContent)`
@@ -18,15 +20,24 @@ const FeaturedCaseStyledButton = styled(StyledButtonA)`
     bottom: 5%;
 `;
 
-export default function FeaturedCase({ featuredCase }) {
-    if(Object.keys(featuredCase).length === 0) {
+function FeaturedCase() {
+
+    const featuredCase = useSelector(state => state.featuredCaseReducer, shallowEqual)
+    const dispatch = useDispatch();
+
+
+    useEffect(() => {
+        dispatch(fetchCases())
+    }, [dispatch])
+    
+    if(featuredCase.loading === true) {
         return (
             <CenteredContent>
                 <Loading />
             </CenteredContent>
         )
     }
-    const { name, featuredTitle, img, href } = featuredCase;
+    const { name, featuredTitle, img, href } = featuredCase.featuredCase;
     return (
         <div className="case featured-case">
             <img src={`http://localhost:4000/${img}`} alt={name}/>
@@ -37,3 +48,5 @@ export default function FeaturedCase({ featuredCase }) {
         </div>
     )
 }
+
+export default connect(null)(FeaturedCase);

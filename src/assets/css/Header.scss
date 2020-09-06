@@ -5,7 +5,8 @@ header {
     width: 100%;
     z-index: 99;
     margin-top: 50px;
-    transition: all .1s ease-in;
+    transition: .3s cubic-bezier(.455,.03,.515,.955);
+    transition-property: background-color,color,transform,-webkit-transform;
 
     &.page-scrolled {
         margin: 0;
@@ -38,7 +39,8 @@ header {
                 transform-origin: center;
                 background-color: #0E0E0E;
                 top: 47%;
-                transition: all 0.1s linear;
+                transition: .3s cubic-bezier(.455,.03,.515,.955);
+                transition-property: transform,color,-webkit-transform;
                 z-index: 99;
             }
 

@@ -1,30 +1,22 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Loading from '../Loading';
 import ClientsItem from './ClientsItem';
 import { CenteredContent } from '../../assets/globalStyles';
 import { v4 as uuidv4 } from 'uuid';
+import { connect, shallowEqual, useSelector, useDispatch } from 'react-redux';
 import '../../assets/css/Clients.scss';
+import { fetchClients } from '../../store/actions';
 
-export default function ClientsList() {
-
-    const [clients, setClients] = useState([]);
-
+function ClientsList() {
+    
+    const clients = useSelector(state => state.clientsReducer, shallowEqual)
+    const dispatch = useDispatch();
+    
     useEffect(() => {
-        const headers = new Headers({
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        });
+        dispatch(fetchClients())
+    }, [dispatch])
 
-        //
-         fetch("http://localhost:4000/clients", {
-                headers: headers,
-            })
-            .then(res => res.json())
-            .then(data => setClients(data));
-    }, [])
-
-    if(Object.keys(clients).length < 1) {
+    if(clients.loading === true) {
         return (
             <CenteredContent>
                 <Loading />
@@ -35,14 +27,16 @@ export default function ClientsList() {
     return (
         <div className="clients-container">
             <CenteredContent>
-                <h2 className="title">{clients.title}</h2>
-                <div className="description">{clients.description}</div>
+                <h2 className="title">{clients.clients.title}</h2>
+                <div className="description">{clients.clients.description}</div>
             </CenteredContent>
             <CenteredContent className="clients">
-                {clients.clients.length > 0 && clients.clients.map(({ img_src, client }) => (
+                {clients.clients.clients.length > 0 && clients.clients.clients.map(({ img_src, client }) => (
                     <ClientsItem key={uuidv4()} client={client} img_src={img_src} />
                 ))}
             </CenteredContent>
         </div>
     )
 }
+
+export default connect(null)(ClientsList);

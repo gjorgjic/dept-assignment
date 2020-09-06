@@ -122,6 +122,9 @@ footer {
             bottom: 30px;
             padding: 10px 10px 5px 10px;
             cursor: pointer;
+            transition: .3s cubic-bezier(.455,.03,.515,.955);
+            visibility: hidden;
+            opacity: 0;
             
             svg {
                 transition: .3s cubic-bezier(.455,.03,.515,.955);

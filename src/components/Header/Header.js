@@ -33,9 +33,11 @@ function Header() {
 
             let scrollTopLink = document.getElementById('linkTop');
             if(scrollTop > 400 && scrollTopLink.length !== -1) {
-                scrollTopLink.style.display = "block";
+                scrollTopLink.style.visibility = "visible";
+                scrollTopLink.style.opacity = 1;
             } else {
-                scrollTopLink.style.display = "none";
+                scrollTopLink.style.visibility = "hidden";
+                scrollTopLink.style.opacity = "0";
             }
         }
     }
@@ -55,12 +57,15 @@ function Header() {
             event.currentTarget.parentNode.classList.add('open');
             document.querySelector('body').classList.add('menu-open');
         }
-        if(Array.from(document.querySelector('header').classList).indexOf('page-scrolled') !== -1) {
+
+        let headerClassesArray = Array.from(document.querySelector('header').classList);
+        if(headerClassesArray.indexOf('page-scrolled') !== -1) {
             document.querySelector('header').classList.remove('page-scrolled');
-        } else {
+        } else if (window.pageYOffset === 0 && headerClassesArray.indexOf('page-scrolled') === 0) {
+            document.querySelector('header').classList.remove('page-scrolled');
+        } else if(window.pageYOffset !== 0) {
             document.querySelector('header').classList.add('page-scrolled');
         }
-        console.log(Array.from(document.querySelector('header').classList).indexOf('page-scrolled'))
         setIsMenuOpen(!isMenuOpen);
     }
 
@@ -68,8 +73,6 @@ function Header() {
         let siblings = Array.from(event.currentTarget.parentNode.parentNode.children);
         for (let sibling in siblings) { 
             let child = siblings[sibling].children;
-            console.log(child[0], 'sibling');
-            console.log(event.currentTarget, 'currentTarget');
             if(child[0] !== event.currentTarget) {
                 child[0].classList.add('not-hovered')
             } else {
@@ -124,7 +127,6 @@ function Header() {
                             </CenteredContent>
                             
                             <CenteredContent className="menu-content-centered">
-                                
                                 <ul className="menu-links">
                                     <li>
                                         <HomeLink onMenuLinkEnter={onMenuLinkEnter} onMenuLinkLeave={onMenuLinkLeave} />
@@ -147,10 +149,9 @@ function Header() {
                                     <li>
                                         <EventsLink onMenuLinkEnter={onMenuLinkEnter} onMenuLinkLeave={onMenuLinkLeave} />
                                     </li>
-                                </ul>
-
-                            
+                                </ul>                            
                             </CenteredContent>
+
                             <CenteredContent className="social-links-centered">
                                 <ul className="social-links">  
                                     <li>
