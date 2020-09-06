@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { setGrid, setList } from '../../store/actions';
-import { useDispatch, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { forceCheck } from 'react-lazyload';
 import '../../assets/css/Toolbar.scss';
 
 function Toolbar(props) {
 
     const [isGrid, setIsGrid] = useState(true);
-    // const filters = useSelector(state => state.casesReducer)
-    const dispatch = useDispatch();
-
 
     const GridListSVG = (props) => (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -66,7 +62,6 @@ function Toolbar(props) {
         let siblings = Array.from(matchedItems);
         
         for (let sibling in siblings) { 
-            console.log('sibling', siblings[sibling])
             if(siblings[sibling].getAttribute('data-industry') !== indVal) {
                 siblings[sibling].style.display = 'none'
             } else {

@@ -1,15 +1,5 @@
 import { findWithAttr } from '../../helpers';
 
-export const setGrid = () => ({
-    type: 'SET_GRID',
-    payload: 'grid'
-})
-
-export const setList = () => ({
-    type: 'SET_LIST',
-    payload: 'list'
-})
-
 export const fetchCasesAsync = cases => {
     return {
         type: 'FETCH_CASES',
