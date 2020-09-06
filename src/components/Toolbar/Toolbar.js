@@ -45,7 +45,6 @@ function Toolbar(props) {
         let siblings = Array.from(matchedItems);
         
         for (let sibling in siblings) { 
-            console.log('sibling', siblings[sibling])
             if(siblings[sibling].getAttribute('data-category') !== catVal) {
                 siblings[sibling].style.display = 'none'
             } else {
