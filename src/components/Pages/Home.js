@@ -6,6 +6,7 @@ import Toolbar from '../Toolbar/Toolbar';
 import ClientsList from '../Clients/ClientsList';
 import ContactForm from '../Forms/ContactForm';
 import { CenteredContent } from '../../assets/globalStyles';
+import LazyLoad from 'react-lazyload';
 
 const OHCenteredContent = styled(CenteredContent)`
     overflow: hidden;
@@ -16,13 +17,21 @@ export default function Home() {
         <div>
             <FeaturedCase />
             <OHCenteredContent>
-                <Toolbar />
-                <CaseList />
+                <LazyLoad once >
+                    <Toolbar />
+                </LazyLoad>
+                <LazyLoad once >
+                    <CaseList />
+                </LazyLoad>
             </OHCenteredContent>
-            <ClientsList />
-            <CenteredContent className="contact-form-container">
-                <ContactForm />
-            </CenteredContent>
+            <LazyLoad once>
+                <ClientsList />
+            </LazyLoad>
+            <LazyLoad once>
+                <CenteredContent className="contact-form-container">
+                    <ContactForm />
+                </CenteredContent>
+            </LazyLoad>
         </div>
     )
 }

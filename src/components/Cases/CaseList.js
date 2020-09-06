@@ -27,6 +27,7 @@ function CaseList() {
 
     return (
         <div className={`cases ${layout}-layout`}>
+            {/* {console.log(cases, 'cases')} */}
             {cases.cases.length > 0 && cases.cases.map((data, i) => i === quoteId ? <QuoteItem quoteData={data} key={uuidv4()}>QuoteItem</QuoteItem> : <CaseItem key={uuidv4()} caseData={data} />)}
         </div>
     )

@@ -1,6 +1,7 @@
 .featured-case {
     position: relative;
     overflow: hidden;
+    padding-bottom: 67%;
     h3 {
         position: absolute;
         top: 41%;
@@ -15,7 +16,8 @@
         width: 100%;
         left: 0;
         float: left;
-        position: relative;
         z-index: -1;
+        // position: relative;
+        position: absolute;
     }
 }

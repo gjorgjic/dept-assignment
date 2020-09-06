@@ -1,12 +1,18 @@
-import React from 'react'
+import React from 'react';
+import LazyLoad from 'react-lazyload';
+
 
 export default function QuoteItem({ quoteData }) {
     const { quote, name } = quoteData;
 
     return (
-        <div className="quote">
-            <q>{quote.replace(/&quot;/g, '"')}</q>
-            <p>{name}</p>
-        </div>
+        <LazyLoad once>
+            <div className="quote-container">
+                <div className="quote">
+                    <q className="title">{quote.replace(/&quot;/g, '"')}</q>
+                    <p>{name}</p>
+                </div>
+            </div>
+        </LazyLoad>
     )
 }

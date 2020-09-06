@@ -40,6 +40,8 @@ export const fetchCases = () => {
                 let standardCases = data.cases.filter(standardCase => standardCase !== data.cases[findWithAttr(data.cases, 'featured', true)])
                 dispatch(fetchCasesAsync(standardCases));
                 dispatch(fetchFeaturedCaseAsync(data.cases[findWithAttr(data.cases, 'featured', true)]));
+                // dispatch(getCasesByIndustry(data.cases[findWithAttr(data.cases, 'featured', true)]))
+                // dispatch(setCasesByCategory())
             })
             .catch((e) => {
                 dispatch(fetchCasesAsync({"error": e}))
@@ -69,4 +71,3 @@ export const fetchClients = () => {
             .then(data => dispatch(fetchClientsAsync(data)));
     }
 };
-

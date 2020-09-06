@@ -1,14 +1,16 @@
-import React from 'react'
+import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 export default function CaseItem({ caseData }) {
-    const { name, title, img, href } = caseData;
+    const { name, title, img, href, category, industry } = caseData;
 
     return (
-        <div className="case">
-            
+        <div className="case" data-category={category} data-industry={industry}>
                 {img !== '' ? (
                     <div className="img-container">
-                        <img src={`http://localhost:4000/${img}`} alt={name}/>
+                        <LazyLoad once>
+                            <img src={`http://localhost:4000/${img}`} alt={name}/>
+                        </LazyLoad>
                     </div>
                 ) : null}
             <div>

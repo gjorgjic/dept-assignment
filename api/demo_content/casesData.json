@@ -4,25 +4,33 @@
             "name": "Bol.com",
             "title": "A summer island in the Netherlands",
             "img": "images/bolcom.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry1",
+            "category": "category1"
         },
         {
             "name": "Kempen",
             "title": "Not some average banking website",
             "img": "images/kempen.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry1",
+            "category": "category1"
         },
         {
             "name": "Philips",
             "title": "Beautiful design meets innovative technology",
             "img": "images/philips.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry1",
+            "category": "category1"
         },
         {
             "name": "Gemeentemuseum",
             "title": "A 100 years of Mondriaan & De Stijl",
             "img": "images/gemeentemuseum.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry2",
+            "category": "category2"
         },
         {
             "name": "Florensis",
@@ -30,90 +38,120 @@
             "img": "images/florensis.png",
             "href": "#",
             "featured": true,
-            "featuredTitle": "Work"
+            "featuredTitle": "Work",
+            "industry": "industry2",
+            "category": "category2"
         },
         {
             "name": "Microsoft",
             "title": "Tapping into Ireland’s unique gaming culture and bringing a fresh flavour to their Xbox social media channels",
             "img": "",
-            "href": "#"
+            "href": "#",
+            "industry": "industry2",
+            "category": "category2"
         },
         {
             "name": "O’NEILL",
             "title": "Integrating existing content into O’Neill’s new e-commerce platform",
             "img": "",
-            "href": "#"
+            "href": "#",
+            "industry": "industry3",
+            "category": "category3"
         },
         {
             "name": "Be Lighting",
             "title": "Delivering clarity on a global scale",
             "img": "images/lightning.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry3",
+            "category": "category3"
         },
         {
             "name": "TUI",
             "title": "Swipe to find your next holiday destination",
             "img": "images/tui.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry3",
+            "category": "category3"
         },
         {
             "name": "BUTLINS",
             "title": "Enhancing customer experience for personalised holiday planning using real time data",
             "img": "",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "VACANSESELECT",
             "title": "Predicting booking behavior for holidays with smart data, voice search and machine learning",
             "img": "",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "Florensis",
             "title": "Beautiful design meets innovative technology",
             "img": "images/florensis.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "Chocomel",
             "title": "A campaign for the limited edition letter packs",
             "img": "images/chocomel.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "JBL",
             "title": "Live like a champion with Jerome Booteng",
             "img": "images/jbl.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "zalando",
             "title": "Innovative SEO and content strategy for Zalando",
             "img": "images/zalando.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "Koninklijke Bibliotheek",
             "title": "The search for the most influential book ever",
             "img": "images/koninklijke-bibliotheek.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "isQuote": true,
             "quote": "Dept helped us tell our story through a bold new identity and a robust online experience. To the tune of 60% growth in online bookings in just one month.",
-            "name": "MATTIJS TEN BRINK – CEO, TRANSAVIA"
+            "name": "MATTIJS TEN BRINK – CEO, TRANSAVIA",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "Liberty Global",
             "title": "Delivering complex commerce solutions",
             "img": "images/liberty-global.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         },
         {
             "name": "Arla",
             "title": "Swipe to find your next holiday destination",
             "img": "images/arla.png",
-            "href": "#"
+            "href": "#",
+            "industry": "industry4",
+            "category": "category4"
         }
     ]
 }

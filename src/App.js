@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import { Provider } from 'react-redux';
 import store from './store'
 import './App.scss';
+import LazyLoad from 'react-lazyload';
 
  function App() {
    return (
@@ -16,7 +17,9 @@ import './App.scss';
         <div className="page">
           <Header />
           <Main />
-          <Footer />
+          <LazyLoad once>
+            <Footer />
+          </LazyLoad>
         </div>
       </Router>
     </Provider>

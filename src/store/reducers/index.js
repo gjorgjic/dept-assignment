@@ -14,7 +14,6 @@ function layoutReducer(state = 'grid', action) {
 function casesReducer(state = { loading: true }, action) {
     switch (action.type) {
         case 'FETCH_CASES':
-            // return state
             return {
                 loading: false,
                 cases: action.payload

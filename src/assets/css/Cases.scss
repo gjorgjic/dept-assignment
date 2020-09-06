@@ -3,24 +3,32 @@
         .case {
             width: 100%;
             float: left;
-    
+            position: relative;
+            
             @media (min-width: 768px) {
                 max-width: calc(50% - 10px);
-    
+                
                 &:nth-child(2n) {
                     margin-left: 10px;
                 }
-    
+                
                 &:nth-child(2n+1) {
                     margin-right: 10px;
                     clear: left;
                 }
             }
-    
-            img {
-                max-width: 100%;
-                width: 100%;
+            
+            .img-container {
+                position: relative;
+                padding-bottom: 86%;
+
+                img {
+                    position: absolute;
+                    max-width: 100%;
+                    width: 100%;
+                }
             }
+    
     
             .company {
                 color: #939393;
@@ -62,10 +70,15 @@
     }
 
     &.list-layout {
+        display: grid;
+        row-gap: 30px;
+        grid-template-columns: 1fr;
         .case {
             width: 100%;
             float: left;
             display: grid;
+            position: relative;
+            
             @media (min-width: 991px) {
                 grid-template-columns: 30% 1fr;
                 column-gap: 30px;
@@ -73,11 +86,18 @@
             @media (max-width: 990px) {
                 row-gap: 30px;
             }
+            
+            .img-container {
+                position: relative;
+                padding-bottom: 86%;
 
-            img {
-                max-width: 100%;
-                width: 100%;
+                img {
+                    position: absolute;
+                    max-width: 100%;
+                    width: 100%;
+                }
             }
+
     
             .company {
                 color: #939393;
@@ -118,9 +138,26 @@
         }    
     }
     
-    .quote {
+    .quote-container {
         width: 100%;
         clear: both;
         float: left;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-top: 50px;
+        border-top: 1px solid #DDDDDD;
+
+        .quote {
+            max-width: 100%;
+            
+            @media (min-width: 990px) {
+                max-width: 80%;
+                margin: 0 auto
+            }
+        }
+
+        .title {
+            font-size: 36px;
+        }
     }
 }

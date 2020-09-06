@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { setGrid, setList } from '../../store/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
+import { forceCheck } from 'react-lazyload';
 import '../../assets/css/Toolbar.scss';
 
-export default function Toolbar() {
+function Toolbar(props) {
 
     const [isGrid, setIsGrid] = useState(true);
+    // const filters = useSelector(state => state.casesReducer)
     const dispatch = useDispatch();
+
 
     const GridListSVG = (props) => (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -28,6 +31,49 @@ export default function Toolbar() {
             dispatch(setGrid())
         }
     }
+    
+    // sorta works but there is a bug due to state change
+    const onCategoryChange = element => {
+        const catVal = element.currentTarget.value;
+        let matchedItems = document.querySelectorAll('.case[data-category]');
+        let siblings = Array.from(matchedItems);
+        
+        for (let sibling in siblings) { 
+            console.log('sibling', siblings[sibling])
+            if(siblings[sibling].getAttribute('data-category') !== catVal) {
+                siblings[sibling].style.display = 'none'
+            } else {
+                siblings[sibling].style.display = 'block'
+            }
+
+            if(catVal === 'all') {
+                siblings[sibling].style.display = 'block'
+            }
+        }
+        forceCheck();
+    }
+
+    // sorta works but there is a bug due to state change
+    const onIndustryChange = element => {
+        const indVal = element.currentTarget.value;
+   
+        let matchedItems = document.querySelectorAll('.case[data-industry]');
+        let siblings = Array.from(matchedItems);
+        
+        for (let sibling in siblings) { 
+            console.log('sibling', siblings[sibling])
+            if(siblings[sibling].getAttribute('data-industry') !== indVal) {
+                siblings[sibling].style.display = 'none'
+            } else {
+                siblings[sibling].style.display = 'block'
+            }
+
+            if(indVal === 'all') {
+                siblings[sibling].style.display = 'block'
+            }
+        }
+        forceCheck();
+    }
 
     return (
         <div className="toolbar">
@@ -39,25 +85,29 @@ export default function Toolbar() {
             <div className="work">
                 <label>Show me</label>
                 <div className="select-container">
-                    <select>
-                        <option value="all-work">all work</option>
-                        <option value="all-work">all work</option>
-                        <option value="all-work">all work</option>
-                        <option value="all-work">all work</option>
+                    <select onChange={onCategoryChange}>
+                        <option value="all">all</option>
+                        <option value="category1">category1</option>
+                        <option value="category2">category2</option>
+                        <option value="category3">category3</option>
+                        <option value="category4">category4</option>
                     </select>
                 </div>
             </div>
             <div className="industry">
                 <label>in</label>
                 <div className="select-container">
-                    <select>
-                        <option value="all-industries">all industries</option>
-                        <option value="all-industries">all industries</option>
-                        <option value="all-industries">all industries</option>
-                        <option value="all-industries">all industries</option>
+                    <select onChange={onIndustryChange}>
+                        <option value="all">all</option>
+                        <option value="industry1">industry1</option>
+                        <option value="industry2">industry2</option>
+                        <option value="industry3">industry3</option>
+                        <option value="industry4">industry4</option>
                     </select>
                 </div>
             </div>
         </div>
     )
 }
+
+export default connect(null)(Toolbar)
