@@ -24,17 +24,14 @@ function Toolbar(props) {
         let casesDivClasses = casesDiv.classList;
         setIsGrid(!isGrid);
         if(isGrid) {
-            // dispatch(setList())
             casesDivClasses.remove('grid-layout');
             casesDivClasses.add('list-layout');
         } else {
-            // dispatch(setGrid())
             casesDivClasses.add('grid-layout');
             casesDivClasses.remove('list-layout');
         }
     }
     
-    // sorta works but there is a bug due to state change
     const onCategoryChange = element => {
         const catVal = element.currentTarget.value;
         let matchedItems = document.querySelectorAll('.case[data-category]');
@@ -54,7 +51,6 @@ function Toolbar(props) {
         forceCheck();
     }
 
-    // sorta works but there is a bug due to state change
     const onIndustryChange = element => {
         const indVal = element.currentTarget.value;
    

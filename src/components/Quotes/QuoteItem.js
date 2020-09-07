@@ -6,13 +6,13 @@ export default function QuoteItem({ quoteData }) {
     const { quote, name } = quoteData;
 
     return (
-        <LazyLoad once>
-            <div className="quote-container">
+        <div className="quote-container">
+            <LazyLoad once>
                 <div className="quote">
                     <q className="title">{quote.replace(/&quot;/g, '"')}</q>
                     <p>{name}</p>
                 </div>
-            </div>
         </LazyLoad>
+            </div>
     )
 }

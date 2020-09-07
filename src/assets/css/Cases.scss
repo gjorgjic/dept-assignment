@@ -1,20 +1,23 @@
 .cases {
     &.grid-layout {
+        display: grid;
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        gap: 30px;
         .case {
             width: 100%;
             float: left;
             position: relative;
             
             @media (min-width: 768px) {
-                max-width: calc(50% - 10px);
+                // max-width: calc(50% - 10px);
                 
                 &:nth-child(2n) {
-                    margin-left: 10px;
+                    // margin-left: 10px;
                 }
                 
                 &:nth-child(2n+1) {
-                    margin-right: 10px;
-                    clear: left;
+                    // margin-right: 10px;
+                    // clear: left;
                 }
             }
             
@@ -146,6 +149,8 @@
         margin-bottom: 50px;
         padding-top: 50px;
         border-top: 1px solid #DDDDDD;
+        grid-column-start: 1;
+        grid-column-end: 3;
 
         .quote {
             max-width: 100%;

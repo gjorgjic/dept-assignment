@@ -120,7 +120,7 @@
             "img": "images/zalando.png",
             "href": "#",
             "industry": "industry4",
-            "category": "category4"
+            "category": "category2"
         },
         {
             "name": "Koninklijke Bibliotheek",
@@ -128,14 +128,14 @@
             "img": "images/koninklijke-bibliotheek.png",
             "href": "#",
             "industry": "industry4",
-            "category": "category4"
+            "category": "category2"
         },
         {
             "isQuote": true,
             "quote": "Dept helped us tell our story through a bold new identity and a robust online experience. To the tune of 60% growth in online bookings in just one month.",
             "name": "MATTIJS TEN BRINK – CEO, TRANSAVIA",
             "industry": "industry4",
-            "category": "category4"
+            "category": "category2"
         },
         {
             "name": "Liberty Global",
@@ -143,7 +143,7 @@
             "img": "images/liberty-global.png",
             "href": "#",
             "industry": "industry4",
-            "category": "category4"
+            "category": "category2"
         },
         {
             "name": "Arla",
@@ -151,7 +151,7 @@
             "img": "images/arla.png",
             "href": "#",
             "industry": "industry4",
-            "category": "category4"
+            "category": "category2"
         }
     ]
 }
