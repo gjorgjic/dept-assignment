@@ -8,19 +8,6 @@
             float: left;
             position: relative;
             
-            @media (min-width: 768px) {
-                // max-width: calc(50% - 10px);
-                
-                &:nth-child(2n) {
-                    // margin-left: 10px;
-                }
-                
-                &:nth-child(2n+1) {
-                    // margin-right: 10px;
-                    // clear: left;
-                }
-            }
-            
             .img-container {
                 position: relative;
                 padding-bottom: 86%;
