@@ -38,13 +38,27 @@ function Toolbar(props) {
         let siblings = Array.from(matchedItems);
         
         for (let sibling in siblings) { 
-            if(siblings[sibling].getAttribute('data-category') !== catVal) {
-                siblings[sibling].style.display = 'none'
+            if(document.querySelector('.industry select').value === 'all') {
+                if(siblings[sibling].getAttribute('data-category') !== catVal && catVal !== 'all') {
+                    siblings[sibling].style.display = 'none'
+                } else {
+                    siblings[sibling].style.display = 'grid'
+                }
             } else {
-                siblings[sibling].style.display = 'grid'
+                if(siblings[sibling].getAttribute('data-category') !== catVal) {
+                    siblings[sibling].style.display = 'none'
+                } else {
+                    if(siblings[sibling].getAttribute('data-industry') !== document.querySelector('.industry select').value) {
+                        siblings[sibling].style.display = 'none'
+                    } else {
+                        siblings[sibling].style.display = 'grid'
+                    }
+                }
             }
 
-            if(catVal === 'all') {
+            if(catVal === 'all' && (siblings[sibling].getAttribute('data-industry') === document.querySelector('.industry select').value)) {
+                siblings[sibling].style.display = 'grid'
+            } else if(catVal === 'all' && document.querySelector('.industry select') === 'all') {
                 siblings[sibling].style.display = 'grid'
             }
         }
@@ -58,13 +72,27 @@ function Toolbar(props) {
         let siblings = Array.from(matchedItems);
         
         for (let sibling in siblings) { 
-            if(siblings[sibling].getAttribute('data-industry') !== indVal) {
-                siblings[sibling].style.display = 'none'
+            if(document.querySelector('.work select').value === 'all') {
+                if(siblings[sibling].getAttribute('data-industry') !== indVal && indVal !== 'all') {
+                    siblings[sibling].style.display = 'none'
+                } else {
+                    siblings[sibling].style.display = 'grid'
+                }
             } else {
-                siblings[sibling].style.display = 'grid'
+                if(siblings[sibling].getAttribute('data-industry') !== indVal) {
+                    siblings[sibling].style.display = 'none'
+                } else {
+                    if(siblings[sibling].getAttribute('data-category') !== document.querySelector('.work select').value) {
+                        siblings[sibling].style.display = 'none'
+                    } else {
+                        siblings[sibling].style.display = 'grid'
+                    }
+                }
             }
 
-            if(indVal === 'all') {
+            if(indVal === 'all' && siblings[sibling].getAttribute('data-category') === document.querySelector('.work select').value) {
+                siblings[sibling].style.display = 'grid'
+            } else if(indVal === 'all' && document.querySelector('.work select') === 'all') {
                 siblings[sibling].style.display = 'grid'
             }
         }
@@ -81,7 +109,7 @@ function Toolbar(props) {
             <div className="work">
                 <label>Show me</label>
                 <div className="select-container">
-                    <select onChange={onCategoryChange}>
+                    <select data-area="category" onChange={onCategoryChange}>
                         <option value="all">all</option>
                         <option value="category1">category1</option>
                         <option value="category2">category2</option>
@@ -93,7 +121,7 @@ function Toolbar(props) {
             <div className="industry">
                 <label>in</label>
                 <div className="select-container">
-                    <select onChange={onIndustryChange}>
+                    <select data-area="industry" onChange={onIndustryChange}>
                         <option value="all">all</option>
                         <option value="industry1">industry1</option>
                         <option value="industry2">industry2</option>
