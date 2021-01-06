@@ -61,3 +61,8 @@ export const fetchClients = () => {
             .then(data => dispatch(fetchClientsAsync(data)));
     }
 };
+
+export const setVisibilityFilter = filter => ({
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  })

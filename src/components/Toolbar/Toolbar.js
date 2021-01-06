@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { forceCheck } from 'react-lazyload';
+import { setVisibilityFilter } from '../../store/actions';
 import '../../assets/css/Toolbar.scss';
 
-function Toolbar(props) {
+function Toolbar({ onChange }) {
 
     const [isGrid, setIsGrid] = useState(true);
+    const dispatch = useDispatch();
 
-    const GridListSVG = (props) => (
+    const GridListSVG = () => (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             {isGrid === false && (
                 <path id="grid" fill="#000" d="M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z">
@@ -99,6 +101,16 @@ function Toolbar(props) {
         forceCheck();
     }
 
+    const onChange1 = (e) => {
+        let filter = e.currentTarget.getAttribute('filter');
+        dispatch(setVisibilityFilter(filter));
+    }
+
+    const onChange2 = (e) => {
+        let filter = e.currentTarget.getAttribute('filter');
+        dispatch(setVisibilityFilter(filter));
+    }
+
     return (
         <div className="toolbar">
             <div className="layout-switch">
@@ -109,7 +121,7 @@ function Toolbar(props) {
             <div className="work">
                 <label>Show me</label>
                 <div className="select-container">
-                    <select data-area="category" onChange={onCategoryChange}>
+                    <select data-area="category" onChange={onChange1} filter="SHOW_CATEGORIES">
                         <option value="all">all</option>
                         <option value="category1">category1</option>
                         <option value="category2">category2</option>
@@ -121,7 +133,7 @@ function Toolbar(props) {
             <div className="industry">
                 <label>in</label>
                 <div className="select-container">
-                    <select data-area="industry" onChange={onIndustryChange}>
+                    <select data-area="industry" onChange={onChange1} filter="SHOW_INDUSTRIES">
                         <option value="all">all</option>
                         <option value="industry1">industry1</option>
                         <option value="industry2">industry2</option>
@@ -134,4 +146,9 @@ function Toolbar(props) {
     )
 }
 
-export default connect(null)(Toolbar)
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    // onChange: () => dispatch(setVisibilityFilter(ownProps.filter))
+    onChange: () => {console.log(ownProps.filter)}
+  })
+
+export default connect(null, mapDispatchToProps)(Toolbar)

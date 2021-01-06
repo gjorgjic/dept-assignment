@@ -5,18 +5,21 @@ import {v4 as uuidv4} from 'uuid';
 import Loading from '../Loading';
 import '../../assets/css/Cases.scss';
 import { findWithAttr } from '../../helpers';
-import { useSelector, useDispatch, shallowEqual, connect } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
 import { fetchCases } from '../../store/actions';
 
-function CaseList() {
+function CaseList({ cases }) {
 
     // const layout = useSelector(state => state.layoutReducer, shallowEqual)
-    const cases = useSelector(state => state.casesReducer, shallowEqual)
+    // const cases = useSelector(state => state.casesReducer, shallowEqual)
+
+    const visibility = useSelector(state => state.visibilityFilter)
     const dispatch = useDispatch();
 
     useEffect(() => {
+        console.log(visibility)
         dispatch(fetchCases())
-    }, [dispatch])
+    }, [dispatch, visibility])
 
     if(cases.loading === true) {
         return <Loading />
@@ -33,4 +36,21 @@ function CaseList() {
     )
 }
 
-export default connect(null)(CaseList)
+const getVisibleCases = (cases, filter) => {
+    switch (filter) {
+      case 'SHOW_ALL':
+        return cases
+      case 'SHOW_INDUSTRIES':
+        return cases.cases.filter(c => c.completed)
+      case 'SHOW_CATEGORIES':
+        return cases.cases.filter(c => !c.completed)
+      default:
+        throw new Error('Unknown filter: ' + filter)
+    }
+  }
+  
+  const mapStateToProps = state => ({
+    cases: getVisibleCases(state.casesReducer, state.visibilityFilter)
+  })
+
+export default connect(mapStateToProps)(CaseList)
